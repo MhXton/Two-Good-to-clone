@@ -1,0 +1,471 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+*::selection{
+    color: #fff;
+    background-color: black;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #F7F7F7;
+}
+
+#cursor{
+    height: 450px;
+    width: 450px;
+    background-color: #928a8a13;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%) scale(0);
+}
+
+#nav{
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#nav .logo{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    height: 95px;
+    gap: 30px;
+    overflow: hidden;
+    padding: 0px 20px;
+}
+
+.logo img{
+    height: 95px;
+    width: 88px;
+}
+
+.nav-menu #links a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 30px;
+}
+
+.nav-menu #icons i{
+    font-size: 18px;
+    margin: 0px 20px;
+    font-weight: 100;
+}
+
+#icons{
+    padding: 10px;
+    background-color: #F7F7F7;
+    border-radius: 50px;
+}
+
+#main{
+    padding: 25px;
+}
+@font-face {
+    font-family: helvitica;
+    font-weight: 100;
+    src: url(./HelveticaNowText-Regular.ttf);
+}
+
+@font-face {
+    font-family: Futura;
+    font-weight: 100;
+    src: url(./Futura-Bold.ttf);
+}
+
+#page-1{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0 1vw;
+    padding-top: 15vh;
+}
+
+#page-1 h1{
+    font-size: 15vw;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-family: helvitica;
+    font-weight: 700;
+}
+
+#video-container{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+}
+
+#video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 1; /* Video should be behind the button */
+    position: relative; /* Make sure video stacking context is correct */
+    cursor: none;
+    padding-bottom: 80px;
+    z-index: 99;
+}
+
+
+#Play {
+    padding: 4vw;
+    background-color: black;
+    color: #fff;
+    font-size: 1.5vw;
+    text-decoration: none;
+    font-family: helvetica;
+    position: fixed;
+    border-radius: 50%;
+    padding: 3vw 2vw;
+    opacity: 0;
+    scale: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    cursor: none;
+}
+
+#section2{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3vw 1vw;
+    position: relative;
+}
+
+#section2 .Sec2{
+    height: 100vh;
+    width: 32.5%;
+    position: relative;
+}
+
+#section2 .Sec2 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#section2 .shop-box{
+    background: #f5dfcf;
+    padding: 0 32px;
+    width: 450px;
+    height: 70px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+
+
+.shop-box .dot{
+    width: 12px;
+    height: 12px;
+    background: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+
+.shop-box svg{
+    color: black;
+    font-weight: 700;
+}
+
+.shop-box .name{
+    gap: 20px;
+}
+.shop-box .name h2{
+    color: #000;
+    font-family: helvetica;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#Shop1 .product-box{
+    height: 450px;
+    width: 450px;
+    background-color: #f5dfcf;
+    position: absolute;
+    top: 67.6%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    z-index: 99;
+    padding: 10px 10px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+#Shop1:hover .product-box{
+    opacity: 1;
+}
+
+#section3{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-right: 120px;
+}
+
+#section3 h2{
+     font-size: 60px;
+     font-family: Futura;
+     width: 40%;
+     text-transform: uppercase;
+     
+}
+#section3 p{
+    letter-spacing: 0.01em;
+    font-size: 18px;
+    font-family: helvetica;
+    width: 24%;
+    line-height: 22px;
+}
+
+
+#section4{
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 120px;
+}
+
+.child{
+    height: 55vh;
+    width: 40vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.child img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* respponsive start */
+
+@media (max-width:1024px){
+    #section2 .shop-box{
+        background: #f5dfcf;
+        padding: 0 32px;
+        width: 250px;
+        height: 40px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+    .shop-box .dot{
+        width: 9px;
+        height: 9px;
+        background: rgb(0, 0, 0);
+        border-radius: 50%;
+    }
+    
+    
+    .shop-box svg{
+        color: black;
+        font-weight: 700;
+    }
+    
+    .shop-box .name{
+        gap: 20px;
+    }
+    .shop-box .name h2{
+        color: #000;
+        font-family: helvetica;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    #Shop1 .product-box{
+        height: 300px;
+        width: 250px;
+        background-color: #f5dfcf;
+        position: absolute;
+        top: 67.6%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 25px;
+        z-index: 99;
+        padding: 10px 10px;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+    }
+    
+    #Shop1:hover .product-box{
+        opacity: 1;
+    }
+    .shop-product1 h3{
+        font-size: 13px;
+    }
+
+    #section3{
+        height: 30vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-right: 0px;
+    }
+    
+    #section3 h2{
+         font-size: 30px;
+         font-family: Futura;
+         width: 45%;
+         text-transform: uppercase;
+         
+    }
+    #section3 p{
+        letter-spacing: 0.01em;
+        font-size: 16px;
+        font-family: helvetica;
+        width: 45%;
+        line-height: 22px;
+    }
+
+}
+
+
+@media (max-width:600px){
+
+    #cursor{
+        height: 250px;
+        width: 250px;
+        background-color: #928a8a13;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%) scale(0);
+    }
+    
+    #main{
+        padding: 15px;
+    }
+    #page-1{
+       
+        width: 100%;
+        padding: 0 2vw;
+        padding-top: 15vh;
+    }
+    #page-1 h1{
+        font-size: 13vw;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        font-family: helvitica;
+        font-weight: 700;
+    }
+
+    #video-container{
+        height: 60vh;
+        width: 100%;
+        padding-bottom: 30px;
+        overflow: hidden;
+    }
+    #video-container video {
+        padding-bottom: 30px;
+    }
+    
+    #Play {
+        padding: 4vw;
+        font-size: 3.5vw;
+        font-family: helvetica;
+        position: absolute;
+        border-radius: 50%;
+        padding: 7vw 5vw;
+        opacity: 1;
+        scale: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: translate(-50%,-40%);
+        cursor: none;
+    }
+    #section2{
+        padding: 0vw 0vw;
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+    #section2 .Sec2{
+        min-height: 100vh;
+        height: 100%;
+        width: 100%;
+    }
+
+    #section4{
+        height: 120vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding-top: 120px;
+    }
+    .child{
+        height: 55vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
